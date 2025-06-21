@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-^1_29&3_)&et7@id(7tljotzgg^de4x)1sv)itntl+ig5=+ai=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhitenoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -78,10 +79,11 @@ WSGI_APPLICATION = 'Amora_Costa.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'amoracosta',
-        'USER' : 'root',
-        'PASSWORD':'662002',
-        'HOST':'localhost'
+        'NAME': os.environ.get('DB_NAME'),
+        'USER' : os.environ.get('DB_USER'),
+        'PASSWORD':os.environ.get('DB_PASSWORD'),
+        'HOST':os.environ.get('DB_HOST')
+        'PORT' :os.environ.get('DB_PORT','3306')
       
     }
 }
@@ -129,6 +131,7 @@ STATICFILES_DIRS =[
 
 STATIC_ROOT  = os.path.join(BASE_DIR,'assets')
 
+STATICSTORAGE = 'whitenoise.storage.CompressedManifesrStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
