@@ -22,11 +22,11 @@
                 <div id="nav-ul-div">
                     <button id="close-btn" onclick="navClose()"><i class="fa-solid fa-xmark"></i></button>
                     <ul id="nav-ul">
-                        <li> <a href="#container">Home</a></li>
+                        <li> <a href={{Home}}>Home</a></li>
                         <li><a href="#footer">Contact</a></li>
                         <li><a href="#about-us-div">About us</a></li>
                         <li><a href="#vacancy-div">Oppoetunities</a></li>
-                        <li><a>FAQ</a></li>
+                        <li><a href='#FAQ'>FAQ</a></li>
                     </ul>
                 </div>
 
@@ -36,6 +36,12 @@
        
     </header>
     <div id="div-three"><h3 id="running-h3">Are you planing to get a job in abroad. Don't wast your precious time !. Get guidence from our Executives &nbsp; <a href="#footer" id="runnig-contact" >Contact</a></h3></div>
+    <div id='msg'>
+        {%for message in messages%}
+        {{message}}
+        {%endfor%}
+
+    </div>
 
     <section>
 
@@ -61,20 +67,28 @@
                 <h3 id="welcome-heading3">WHAT WE OFFER</h3>
                 <ul id="what-to-offer">
                     <div class="what-to-offer-div"><li class="what-to-offer-li">Global Job Placement for Skilled & Unskilled Roles</li>
-                    <button class="what-to-btn"></button>
+                    <p class="what-to-p">Global job placement involves recruiting and deploying workers from one country to another to meet workforce demands in industries like construction, healthcare, agriculture, hospitality, manufacturing, etc.</p>
                     </div>
 
-                    <div class="what-to-offer-div"><li class="what-to-offer-li">Verified Employers Across Middle East, Europe, and Asia</li>
-                        <button class="what-to-btn"></button></div>
+                    <div class="what-to-offer-div">
+                        <li class="what-to-offer-li">Verified Employers Across Middle East, Europe, and Asia</li>
+                        <p class="what-to-p">Verified employers are companies or agencies that have passed a background screening process to ensure they are legitimate, reliable, and compliant with labor laws. These employers are officially approved to recruit foreign workers.</p>
+                    </div>
                     
-                    <div class="what-to-offer-div"><li class="what-to-offer-li">Personalized Career Guidance</li>
-                        <button class="what-to-btn"></button></div>
+                    <div class="what-to-offer-div">
+                        <li class="what-to-offer-li">Personalized Career Guidance</li>
+                        <p class="what-to-p">helps individuals make informed decisions about their career path, based on their skills, interests, qualifications, work experience, and market demand.</p>
+                    </div>
                     
-                    <div class="what-to-offer-div"><li class="what-to-offer-li">Hassle-Free Visa & Documentation Support</li>
-                        <button class="what-to-btn"></button></div>
+                    <div class="what-to-offer-div">
+                        <li class="what-to-offer-li">Hassle-Free Visa & Documentation Support</li>
+                        <p class="what-to-p">streamlined service that assists job seekers in preparing, submitting, and managing all paperwork required for international job placements. It's especially crucial for those applying abroad in the Middle East, Europe, or Asia, where immigration rules can be complex.</p>
+                    </div>
                     
-                    <div class="what-to-offer-div"><li class="what-to-offer-li"> Affordable & Transparent Services</li>
-                        <button class="what-to-btn"></button></div>
+                    <div class="what-to-offer-div">
+                        <li class="what-to-offer-li"> Affordable & Transparent Services</li>
+                        <p class="what-to-p"> ensure that job seekers and employers clearly understand the costs, benefits, and processes involved in global job placement—without hidden fees, misleading promises, or last-minute surprises.</p>
+                    </div>
                 </ul>
             </div>
         </div>
@@ -108,9 +122,10 @@
 
                         {% for skilled in skilleds  %}
                         <div class="vacancy-skilled-2">
-                            <h4>{{skilled.role}}</h4>
-                            <h5>{{skilled.country}}</h5>
-                            <p>{{skilled.desc}}</p>
+                            <h4>Job:  {{skilled.role}}</h4>
+                            <h5> Country: {{skilled.country}}</h5>
+                            <p> Description: {{skilled.desc}}</p>
+                            <button class='job-contact-btn'><a href= '#footer' class='job-contact'>Contact Now</a> </button>
                         </div>
                         {% endfor %}
                         
@@ -124,10 +139,10 @@
                     <div id="vacancy-unskilled-div-1">
                         {% for job in unskilleds %}
                             <div class="vacancy-unskilled-div-2">
-                                <h4>{{job.role}}</h4>
-                                <h5>{{job.country}}</h5>
-                                <p>{{job.desc}}</p>
-        
+                                <h4>Job: {{job.role}}</h4>
+                                <h5>Country:  {{job.country}}</h5>
+                                <p>Description: {{job.desc}}</p>
+                                <button class='job-contact-btn'><a href= '#footer'>Contact Now</a> </button>
                             </div>
                         {% endfor %}
                      
@@ -145,34 +160,47 @@
 
                 <div id="sucess-group-1" class="sucess-groups" >
                     <div class="sucess-story-div" >
-                        <h5 class="sucess-name">name</h5>
-                        <p class="sucess-story">Story</p>
+                        <h5 class="sucess-name">"never thought I’d actually make it to the UK.” – Jiny, Registered Nurse in London</h5>
+                        <p class="sucess-story">
+                            After working as a nurse in Kerala for over five years, I dreamed of taking my career abroad but didn’t know where to start. That’s when I found Amora Costa Education and consultant, Mysore. From day one, they guided me through everything — from preparing for the IELTS to completing the NMC registration and securing my Tier 2 visa. The team was always available, answering every question and easing every doubt. Today, I’m living in London, working in a well-known NHS hospital, and finally able to support my family the way I always wanted. </p>
                     </div>
                     <div class="sucess-story-div">
-                        <h5 class="sucess-name">name</h5>
-                        <p class="sucess-story">Story</p>
+                        <h5 class="sucess-name">"I thank Amora Costa for being more than just a consultancy—they were my career partners. Their support, clarity, and genuine care helped me make this life-changing move to Canada."
+                            — Sibi Mathew</h5>
+                        <p class="sucess-story">Sibi Mathew's story is one that truly inspires. A dedicated professional with a clear dream of working abroad, Sibi approached us in early 2023 with the goal of building a career in Canada through the International Mobility Visa (IMV) program.</p>
                     </div>
                 </div>
                 
                 <div id="sucess-group-2" class="sucess-groups" >
                     <div class="sucess-story-div">
-                        <h5 class="sucess-name">name2</h5>
-                        <p class="sucess-story">Story</p>
+                        <h5 class="sucess-name">"I had the skills, but Amora Costa gave me the pathway. Their step-by-step support made my UK dream a reality. I'm truly grateful."
+                            — Albin</h5>
+                        <p class="sucess-story">Albin's story is a shining example of that belief. A passionate and skilled nurse with aspirations of working in the UK, Albin reached out to us in 2022 to begin his overseas journey.In 2023, after months of dedication and expert support, Albin successfully received his UK visa and moved to the United Kingdom to begin his career in a reputed healthcare institution.</p>
                     </div>
                     <div class="sucess-story-div">
-                        <h5 class="sucess-name">name 2</h5>
-                        <p class="sucess-story">Story</p>
+                        <h5 class="sucess-name">Shybi,The Netherlands</h5>
+                        <p class="sucess-story">I fulfilled my long-time dream of working in The Netherlands—thanks to the unwavering support of Amora Costa Education & Consultants.
+
+                            From the moment I contacted them, the team guided me with patience and care. Whether it was preparing for my English test, handling the paperwork, or giving me confidence for interviews, they stood by me at every step. I never felt alone in the process.Today, I’m proud to be working as a registered nurse in The Netherlands, growing professionally and living a life I once only imagined. I wholeheartedly thank Amora Costa for being the reason behind my success.
+
+                            – Shybi</p>
                     </div>
                 </div>
 
                 <div id="sucess-group-3" class="sucess-groups" >
                     <div class="sucess-story-div">
-                        <h5 class="sucess-name">name3</h5>
-                        <p class="sucess-story">Story</p>
+                        <h5 class="sucess-name">"it was the year I fulfilled my dream of visiting Greece, a country I had always admired for its beauty, culture, and history."</h5>
+                        <p class="sucess-story">With the help of Amora Costa Education & Consultants, my travel plans were made simple and hassle-free. From visa assistance to travel planning, their team ensured everything was taken care of smoothly. They gave me the confidence to travel internationally for the first time without stress or confusion.I’m grateful to Amora Costa for helping me create memories that will last a lifetime. If you're planning to visit Europe, I highly recommend their professional and friendly support.
+
+                            – Sheela Thomas</p>
                     </div>
                     <div class="sucess-story-div">
-                        <h5 class="sucess-name ">name 3</h5>
-                        <p class="sucess-story">Story</p>
+                        <h5 class="sucess-name ">Hello, I’m Niji JM, and in 2025, I had the wonderful opportunity to visit The Netherlands, a country known for its stunning tulip fields, charming canals, and rich cultural heritage.</h5>
+                        <p class="sucess-story">Planning an international trip felt overwhelming at first, but Amora Costa Education & Consultants made it effortless. They guided me through the tourist visa process, helped with my itinerary, and provided all the support I needed to feel confident traveling abroad.  I’m deeply thankful to the Amora Costa team for making my dream vacation a reality. Their service was professional, transparent, and truly reliable. If you're planning a trip abroad, I highly recommend their assistance.
+
+                            – Niji JM
+                            
+                            </p>
                     </div>
     
                 </div>
@@ -218,22 +246,16 @@
                     <label for="pop-where" class="pop-label">Where are you from</label>
                     <input type="text" name="where" id="pop-where" class="pop-input" placeholder="Where are you from">
                 </div>
+                <div class="pop-cont">
+                    <label for="typeofjob"  class="pop-label">Job type</label>
+                    <select name='typeofjob' id="pop-type" class="pop-input" placeholder='Select a type of job'>
+                        <option value ='Skilled'>Skilled</option>
+                        <option value='Unskilled'> Unskilled</option>
+                    </select>
+                </div>
                 <input type="submit" id="pop-submit">
             </form>
-            <div id='responseMessage'>
-                {% if errors %}
-                
-                {% endif %}    <ul style="color:red;">
-                    {% for error in errors %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
             
-                {% if success %}
-                    <p style="color:green;">{{ success }}</p>
-                {% endif %}
-            
-            </div>
         </div>
        
 
@@ -242,6 +264,34 @@
     </div>
 
 
+
+    <div id='FAQ'>
+        <h3>Frequently Asked Questions</h3>
+        <div id='faq-div1'>
+            <div class="faq-item">
+                <h4>Q: How do I Apply?</h4>
+                <p>A: Go to the Contack us and fill out the form with your details. Our Executve will get in touch with you for application procedures</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Q: How long it will take your executive call</h4>
+                <p>A: Once you sucessfully complete the form our executives will get in touch with you within 3-4 working days </p>
+            </div>
+    
+            <div class="faq-item">
+                <h4>Q: How long it will take to get my</h4>
+                <p>A: Visa procedures are diffrent for various countries. So the time is also depend upon the country which you are appliying. Most propably it will take 4-8 Months </p>
+            </div>
+        </div>
+        <form action ="{% url 'faq_submit' %}" method='post' >
+            {%csrf_token%}
+             <div class="faq-div-input">
+                 <input type='text'name='question' id='faq-input' placeholder='Enter Your Question here'/>
+           
+                 <br> <input type='submit' id='faq-div-btn'/>
+             </div>
+            </form>
+    </div>
 
 
 
@@ -252,12 +302,23 @@
             <div id="footer-address">
                 <h4 id="address-h4">Address</h4>
                 <p id="address-p">Amora Costa Education and Consultanct<br>
-                   2nd Floor V.V Mohala<br>
+
+                    2nd Floor V.V Mohala<br>
+            
                     kalidasa Rd, Mysore,<br>
                     Karnataka,570001 
                 </p>
-                <h5><i class="fa-solid fa-envelope"></i> amoracosta9999@gmail.com</h5>
-                <h5><i class="fa-solid fa-phone"></i> +91 0000000000</h5>
+                <h5 class='address-h5'><i class="fa-solid fa-envelope"></i> amoracosta9999@gmail.com</h5>
+                <h5 class='address-h5'><i class="fa-solid fa-envelope"></i> amoracosta1980@gmail.com</h5>
+
+                <h5 class='address-h5'><i class="fa-solid fa-phone"></i> +91 8590802671</h5>
+                
+                <h5 class='address-h5'><i class="fa-solid fa-phone"></i> +91 7795140226</h5>
+
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+
+
             </div>
             <div id="footer-location">
                 <h4 id="location-h4">Location</h4>
@@ -267,9 +328,10 @@
                 <div id="footer-contact-form">
                     <h4> Fill the form for Callback</h4>
     
-                    <form action='register' method='post'>
-                        {% csrf_token %}
-                        <div id="footer-contact-form-2">
+                  
+                    <div id="footer-contact-form-2">
+                        <form action="{% url 'register' %}" method='post'>
+                                {% csrf_token %}
                             <div class="contact-input-divs">
                                 <label for="footer-form-name" class="contact-label">Full Name</label>
                                 <input placeholder="Full Name" name='name' type="text" id="footer-form-name" class="contact-inputs" >
@@ -294,22 +356,16 @@
                                 <label for="footer-form-place" class="contact-label">where are you from</label>
                                 <input type="text" name='where' placeholder="Where are you from" id="footer-form-place" class="contact-inputs">
                             </div>
-                            <input type="submit" id="submit-btn">
-                            <div>
-                                {% if errors %}
-                                <ul style="color:red; text-decoraton:none;">
-                                    {% for error in errors %}
-                                        <li>{{ error }}</li>
-                                    {% endfor %}
-                                </ul>
-                            {% endif %}
-        
-                            {% if success %}
-                                <p style="color:green;">{{ success }}</p>
-                            {% endif %}
+                            <div class="contact-input-divs">
+                                <label for="typeofjob" class="contact-label">Job type</label>
+                                <select name='typeofjob' id='typeofjob' class="contact-inputs" placeholder='Select a type of job'>
+                                    <option value ='Skilled'>Skilled</option>
+                                    <option value='Unskilled'> Unskilled</option>
+                                </select>
                             </div>
-                        </div>
+                            <input type="submit" id="submit-btn">
                     </form>
+                </div>
                     
                            
                 </div>

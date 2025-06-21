@@ -49,6 +49,13 @@ header{
   padding: 8px;
   margin: 10px;
 }
+#nav-ul li a{
+  text-decoration: none;
+  color: black;
+}
+#nav-ul li a:hover{
+  color: blue;
+}
 #nav-btn{
  
   display: none;
@@ -75,6 +82,9 @@ header{
   animation: scroll-left 30s linear infinite;
   font-size: 19px;
  
+}#running-h3:hover{
+  animation-play-state:paused ;
+
 }
 @keyframes scroll-left {
   0%{
@@ -148,8 +158,9 @@ header{
     margin: auto;
     width: 80%;
     font-size: 20px;
+
   }
-  #nav-ul li a{
+  #nav-ul a{
     text-decoration: none;
     color: black;
     font-size: 20px;
@@ -179,6 +190,11 @@ header{
   background-position: 100%;
   box-sizing: border-box;
   box-shadow: inset;
+}
+#msg{
+  background-color: #241d2e;
+  color: blanchedalmond;
+  text-align: center;
 }
 #section-one{
   background-image: url('images/section-background.jpg');
@@ -312,11 +328,15 @@ padding: 10px;
 .what-to-offer-div{
 height: 250px;
 margin: 15px;
-
+overflow: scroll;
 width: 300px;
 border-radius: 10px;
-
 background-color: rgb(158, 226, 160);
+
+
+}
+.what-to-offer-div::-webkit-scrollbar{
+  display: none;
 }
 #one{
 
@@ -345,6 +365,8 @@ width:100%;
   padding: 1px;
   width: 150px;
   border-radius: 10px;
+  overflow: scroll;
+  
   
 }
 }
@@ -401,6 +423,8 @@ background-color: rgb(241, 235, 235);
   text-align: left;
   width: 100%;
   box-shadow: 3px 3px 3px black;
+  display: flex;
+  flex-direction: column;
   
  
 }#vacancy-unskilled{
@@ -416,7 +440,8 @@ background-color: rgb(241, 235, 235);
 }
 #vacancy-unskilled-div-1{
 
- 
+  display: flex;
+  flex-direction: column;
   
   width:60% ;
 
@@ -433,6 +458,19 @@ background-color: rgb(241, 235, 235);
   box-shadow: 3px 3px 3px black;
   padding: 10px;
 }
+.job-contact-btn{
+  margin-left: auto;
+  background-color: rgb(19, 175, 89);
+  border-radius: 10px;
+  
+}
+.job-contact-btn:hover{
+  background-color: rgb(117, 117, 182);
+}
+.job-contact-btn a{
+  color: black;
+  text-decoration: none;
+}
 @media (max-width:768px) {
   
  
@@ -448,6 +486,7 @@ background-color: rgb(241, 235, 235);
   #vacancy-skilled-div-1{
     width: 100%;
     display: flex;
+    flex-direction:column;
   }
   .vacancy-skilled-2{
     width: 90%;
@@ -475,6 +514,7 @@ background-color: rgb(241, 235, 235);
   text-align: center;
   display: flex;
   flex-direction: column;
+  border: 1px white;
   
   
  
@@ -505,14 +545,13 @@ background-color: rgb(241, 235, 235);
 }
 
 .sucess-story-div{
- background-image: url('images/image2.png');
+ background-image: url('images/bg1.jpg');
  background-repeat: no-repeat;
- background-size: contain;
+ background-size: cover;
  width: 100%;
  height: 400px;
  margin: 40px;
-
-  
+ border-radius: 15px;  
 }
 #sucess-h3{
 font-size: 30px;
@@ -529,7 +568,7 @@ font-size: 25px;
   #sucess-group-2,
   #sucess-group-3 {
     width: 85%;
-    height: 400px;
+    height: 600px;
     margin: 20px auto;
     padding: 15px;
     font-size: 14px;
@@ -537,21 +576,25 @@ font-size: 25px;
     flex-direction: column;
   }
   .sucess-story-div{
-    background-image: url('images/image2.png');
+    background-image: url('images/bg1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     width:100%;
     height: 300px;
     margin: 10px;
+    overflow: scroll;
    
     
 
+    }
+    .sucess-story-div::-webkit-scrollbar{
+      display:none;
     }
 }
 /* about-us */
 
 #about-us-div{
-background-color: rgb(245, 243, 248);
+background-color: white;
 display: flex;
 flex-direction: column;
 margin: auto;
@@ -637,12 +680,70 @@ margin-bottom: auto;
  }
 }
 
+/* FAQ */
+#FAQ{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(198, 227, 227);
+  padding: 10px;
+}
+#FAQ h3{
+  font-size: 30px;
+  color: brown;
+}
+#faq-div1{
+  text-align: left;
+  margin: auto; 
+  
+}
+.faq-item{
+  margin: 40px;
+  padding: 10px;
+  width: 90%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px brown;
+  
+}
+.faq-div-input
+{
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 2px 5px blue;
+  width: 90%;
+  border-radius: 10px;
+  padding: 20px;
+}
+#faq-div-btn{
+  height: 40px;
+  width: 60px;
+  background-color: burlywood;
+  border-radius: 15px;
+  margin: auto;
+}
+#faq-div-btn:hover{
+  background-color: cadetblue;
+}
+#faq-input{
+  height: 70px;
+  width: 80%;
+  margin: auto;
+
+}
+@media (max-width:768px){
+  .faq-item{
+    margin: auto;
+    width: 80%;
+  }
+}
+
 /* footer*/
 
 #footer{
 text-align: center;
 background-color: #241d2e;
-height: 700px;
+height: 640px;
 
 }
 #contact-us{
@@ -661,10 +762,15 @@ grid-template-columns: repeat(3,1fr);
 
 }#footer-address{
 margin-right: auto;
+
+margin-left: 25px;
 }
 #address-h4{
 font-size: 30px;
 text-decoration: underline;
+}
+.address-h5{
+  color: white;
 }
 #address-p{
 color: aliceblue;
@@ -715,14 +821,14 @@ text-decoration: underline;
 }
 
 
-@media (max-width:786px){
+@media (max-width:1000px){
   #footer-div2{
     display: flex;
     flex-direction: column;
   }
   #footer{
     
-    height: 1400px;
+    height: 1525px;
   }
   #footer-address{
     margin: auto;
@@ -749,7 +855,7 @@ text-decoration: underline;
   right: 20%;
   z-index: 999;
   width: 800px;
-  height: 400px;
+  height: 450px;
   border-radius: 20px;
   background-color: #241d2e;
  
@@ -838,7 +944,7 @@ text-decoration: underline;
     background-color: rgb(189, 189, 230);
     border-radius: 20px;
     text-align: center;
-    height: 95%;
+    height: 100%;
     width: 280px;
     margin: auto;
   }
