@@ -36,7 +36,7 @@ SECRET_KEY = 'django-insecure-^1_29&3_)&et7@id(7tljotzgg^de4x)1sv)itntl+ig5=+ai=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'True'
 
-ALLOWED_HOSTS = ["https://amora-costa.up.railway.app",'localhost',]
+ALLOWED_HOSTS = ["amora-costa.up.railway.app",'localhost',]
 
 
 # Application definition
