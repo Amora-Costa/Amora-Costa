@@ -36,7 +36,7 @@ SECRET_KEY = 'django-insecure-^1_29&3_)&et7@id(7tljotzgg^de4x)1sv)itntl+ig5=+ai=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'True'
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://amora-costa.up.railway.app",'localhost',]
 
 
 # Application definition
@@ -148,3 +148,8 @@ STATICSTORAGE = 'whitenoise.storage.CompressedManifesrStaticFilesStorage'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://amora-costa.up.railway.app"
+]
