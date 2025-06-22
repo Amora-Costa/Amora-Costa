@@ -12,10 +12,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import dj_database_url
-# from environ import Env
-# env = Env()
+from environ import Env
+env = Env()
 
-# ENVIRONMENT=env('ENVIRONMENT', default='production')
+ENVIRONMENT=env('ENVIRONMENT', default='production')
  
 # env.read_env()
 import os
@@ -34,7 +34,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^1_29&3_)&et7@id(7tljotzgg^de4x)1sv)itntl+ig5=+ai='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG')
+DEBUG = 'True'
 
 ALLOWED_HOSTS = ["*"]
 
