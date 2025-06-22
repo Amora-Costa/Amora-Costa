@@ -48,7 +48,7 @@ def register(request):
         # Basic validation
         if not name:
             messages.info(request, "Name is required.")
-        elif not re.match(r'^[A-Za-z]+$', name):
+        elif not re.match(r'^[A-Za-z ]+$', name):
             messages.info(request,'Please enter a valid name.')
         
         if not number:
