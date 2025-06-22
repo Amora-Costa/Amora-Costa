@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+# from environ import Env
+# env = Env()
+
+# ENVIRONMENT=env('ENVIRONMENT', default='production')
+ 
+env.read_env()
 import os
 import pymysql
 pymysql.install_as_MySQLdb()
@@ -84,12 +90,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': os.environ.get('DB_NAME'),
         'USER' : os.environ.get('DB_USER'),
-        'PASSWORD':os.environ.get('DB_PASSWORD'),
-        'HOST':os.environ.get('DB_HOST',),
+        'PASSWORD':os.environ.get('DB_PASSWORD','662002'),
+        'HOST':os.environ.get('DB_HOST','127.0.0.1'),
         'PORT' :os.environ.get('DB_PORT','3306')
       
     }
 }
+
+DATABASES['default']=dj_database_url.parse('mysql://root:SteVnlaOlgXmVJGfIXHLIVEhfbCWVrtx@ballast.proxy.rlwy.net:59056/railway')
 
 
 # Password validation
