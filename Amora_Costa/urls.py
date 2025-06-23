@@ -20,9 +20,11 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('',include('Amora.urls')),
     path('admin/', admin.site.urls),
-    re_path(r'^robots\.txt$', serve, {
-        'path': 'robots.txt',
-        'document_root': os.path.join(settings.BASE_DIR, 'static'),
-        'content_type': 'text/plain',
-    })
+   from django.views.generic import TemplateView
+
+
+
+]
+urlpatterns += [
+    path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 ]
