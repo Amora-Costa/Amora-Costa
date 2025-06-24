@@ -12,31 +12,38 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import dj_database_url
-from environ import Env
-env = Env()
-
-ENVIRONMENT=env('ENVIRONMENT', default='production')
- 
-# env.read_env()
 import os
 import pymysql
-pymysql.install_as_MySQLdb()
+import environ
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+
+env = environ.Env(DEGUB=(bool,False))
+env_file = BASE_DIR / '.env'
+if not env_file.exists():
+    raise RuntimeError(f".env not found at {env_file}")
+environ.Env.read_env(env_file, overwrite=True)
+ENVIRONMENT=env('ENVIRONMENT', default='production')
+ 
+
+
+pymysql.install_as_MySQLdb()
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^1_29&3_)&et7@id(7tljotzgg^de4x)1sv)itntl+ig5=+ai='
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'False'
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ["amora-costa.up.railway.app",'localhost',]
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 
 # Application definition
@@ -98,7 +105,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default']=dj_database_url.parse('mysql://root:SteVnlaOlgXmVJGfIXHLIVEhfbCWVrtx@ballast.proxy.rlwy.net:59056/railway')
+DATABASES['default']=dj_database_url.parse(env('DATABASE_URL'))
 
 
 # Password validation
