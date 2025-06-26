@@ -151,7 +151,6 @@ STATICFILES_DIRS =[
 ]
 
 STATIC_ROOT  = os.path.join(BASE_DIR,'assets')
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 STATICSTORAGE = 'whitenoise.storage.CompressedManifesrStaticFilesStorage'
 # Default primary key field type

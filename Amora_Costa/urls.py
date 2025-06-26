@@ -31,8 +31,7 @@ urlpatterns = [
 path('favicon.ico', RedirectView.as_view(url=dj_static('images/amora.ico'), permanent=True)),
 ]
 
-
-
 urlpatterns += [
     path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 ]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
