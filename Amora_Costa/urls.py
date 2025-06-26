@@ -31,9 +31,6 @@ urlpatterns = [
 path('favicon.ico', RedirectView.as_view(url=dj_static('images/amora.ico'), permanent=True)),
 ]
 
-# Serve static files in development
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
 
 
 urlpatterns += [
