@@ -265,6 +265,12 @@ justify-items: auto;
   #section-one{
     height: 200px;
   }
+  #section-one-heading{
+    font-size: 20px;
+  }
+  #section-one-span{
+    font-size: 13px;
+  }
   #section-2{
     display: none;
   }
