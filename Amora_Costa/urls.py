@@ -17,14 +17,25 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from django.views.generic import RedirectView
+from django.templatetags.static import static as dj_static
+from django.conf.urls.static import static
+from django.conf import settings
+
+
+
 urlpatterns = [
     path('',include('Amora.urls')),
     path('admin/', admin.site.urls),
   
-
-
-
+path('favicon.ico', RedirectView.as_view(url=dj_static('images/amora.ico'), permanent=True)),
 ]
+
+# Serve static files in development
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+
 urlpatterns += [
     path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 ]
