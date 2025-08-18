@@ -749,6 +749,28 @@ margin-bottom: auto;
     width: 80%;
   }
 }
+/* privacy */
+#Privacy-1{
+  background-color: aliceblue;
+  display:flex;
+  flex-direction: column;
+  padding: 5px;
+}
+.privacy-head{
+  margin :auto;
+
+}
+#privacy-inner{
+  display: none;
+}
+#privacy-close{
+  margin-right:auto;
+  display: none;
+}
+#pos{
+  margin-left: auto;
+}
+
 
 /* footer*/
 

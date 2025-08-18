@@ -170,7 +170,7 @@ header{
     background-color: antiquewhite;
   }
   #div-three{
-    border: 1px solid;
+   
     height: 25px;
   }
   #running-h3{
@@ -265,6 +265,13 @@ justify-items: auto;
   #section-one{
     height: 200px;
   }
+  #section-one-btn{
+    height: 30px;
+    width: 25%;
+    margin:auto;
+    padding: 10px;
+  }
+
   #section-2{
     display: none;
   }
@@ -742,6 +749,28 @@ margin-bottom: auto;
     width: 80%;
   }
 }
+/* privacy */
+#Privacy-1{
+  background-color: aliceblue;
+  display:flex;
+  flex-direction: column;
+  padding: 5px;
+}
+.privacy-head{
+  margin :auto;
+
+}
+#privacy-inner{
+  display: none;
+}
+#privacy-close{
+  margin-right:auto;
+  display: none;
+}
+#pos{
+  margin-left: auto;
+}
+
 
 /* footer*/
 
@@ -836,7 +865,7 @@ text-decoration: underline;
   }
   #footer{
     
-    height: 1525px;
+    height: 1540px;
   }
   #footer-address{
     margin: auto;

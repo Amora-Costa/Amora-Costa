@@ -67,6 +67,8 @@ showSucess()
 
 function openPop(){
     const pop = document.getElementById('pop-up-form-div');
+  
+
 
 
 
@@ -79,4 +81,26 @@ function closePop(){
 
 
     pop.style.display = 'none'
+}
+
+function openPrivacy(){
+    const privacy = document.getElementById('privacy-inner')
+    const open = document.getElementById('privacy-open')
+    const close = document.getElementById('privacy-close')
+
+
+    privacy.style.display = "flex"
+    privacy.style.flexDirection = "column"
+    open.style.display = "none"
+    close.style.display = "flex"
+}
+
+function closePrivacy(){
+    const privacy = document.getElementById('privacy-inner')
+    const open = document.getElementById('privacy-open')
+    const close = document.getElementById('privacy-close')
+
+    privacy.style.display = "none"
+    open.style.display = 'inline'
+    close.style.display = "none"
 }
