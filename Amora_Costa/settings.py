@@ -43,7 +43,7 @@ pymysql.install_as_MySQLdb()
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+DEBUG = False
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS',default ='127.0.01')
 
