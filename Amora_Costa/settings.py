@@ -45,7 +45,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS','amora-costa-16e3.onrender.com','www.amoracosta.run.place' default ='127.0.01')
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS','amora-costa-16e3.onrender.com','www.amoracosta.run.place', default ='127.0.01')
 
 
 # Application definition
